@@ -1,0 +1,187 @@
+! ~/.Xdefaults or /etc/X11/app-defaults/URxvt
+!********************************************
+! Xft
+!
+Xft.dpi:               96
+Xft.rgba:              rgb
+Xft.hinting:           true
+! enable BCI no need to use autohint
+Xft.autohint:          false
+Xft.hintstyle:         hintmedium
+Xft.antialias:         true
+Xft.rh_prefer_bitmaps: true
+Xft.lcdfilter:         lcddefault
+
+Xcursor.theme: vanilla-dmz-aa
+Xcursor.size: 32
+
+! ***********************************************
+! Base16 Bright
+! Scheme: Chris Kempson (http://chriskempson.com)
+
+#define base00 #151515
+#define base01 #202020
+#define base02 #303030
+#define base03 #505050
+#define base04 #b0b0b0
+#define base05 #d0d0d0
+#define base06 #e0e0e0
+#define base07 #f5f5f5
+#define base08 #ac4142
+#define base09 #d28445
+#define base0A #f4bf75
+#define base0B #90a959
+#define base0C #75b5aa
+#define base0D #6a9fb5
+#define base0E #aa759f
+#define base0F #8f5536
+
+
+!********************************************
+! Emacs
+!Emacs.backend: xft
+Emacs.geometry: 120x36+48+48
+Emacs.useXIM: true
+!Emacs*font:-gohu-gohufont-medium-r-normal-*-14-100-100-100-c-80-iso8859-1
+!Emacs*boldFont:-gohu-gohufont-medium-r-normal-*-14-100-100-100-c-80-iso8859-1
+
+!********************************************
+! dzen2
+dzen2.font:       xft:Consolas:size=7
+dzen2.foreground: #f2f2f5
+dzen2.background: #231f20
+
+!********************************************
+!Xterm
+xterm*title: xterm
+xterm*faceName: monofur for Powerline:size=12
+xterm*geometry: 90x25
+xterm*boldMode: false
+xterm*cutNewline: false
+xterm*on4Clicks: group
+xterm*on5Clicks: page
+xterm*internalBorder: 2
+xterm*customization: color
+xterm*metaSendsEscape: true
+xterm*colorBDMode: false
+xterm*cursorBlink: false
+xterm*dynamiccolors: true
+xterm*utf8: 1
+xterm*loginShell: true
+xterm*jumpScroll: true
+xterm*multiScroll: true
+xterm*saveLines: 512
+xterm*scrollBar: false
+xterm*xftAntialias: false
+xterm*foreground: #D7D0C7
+xterm*background: #151515
+
+
+!********************************************
+! URxvt
+!
+! 24 for pesudo transparent, 32 for real transparent
+URxvt.depth:				 32
+URxvt.saveLines:			 1536
+URxvt.geometry:				 80x24
+URxvt.termName:				 xterm-256color
+URxvt.loginShell:			 true
+URxvt.urgentOnBell:          true
+
+! Transparent
+URxvt.transparent:     False
+! only for 24bits color pesudo transparent
+!URxvt.inheritPixmap:    True
+!URxvt.shading:          5
+URxvt.tintColor:         #000000
+URxvt.fading:            5
+URxvt.fadeColor:         [0]black
+URxvt.cursorUnderline:   false
+
+! Scrollbar
+URxvt.scrollBar:          False
+URxvt.scrollBar_right:    yes
+URxvt.scrollBar_floating: False
+URxvt.scrollstyle:        Next
+
+! http://lifegoo.pluskid.org/wiki/XTerminal.html#urxvt
+! push content in 'screen' / 'tmux' into urxvt scroll buffer
+URxvt.secondaryScroll: true
+
+! do not scroll to bottom when there is output, but do scroll to bottom on key press
+URxvt.scrollTtyOutput: False
+URxvt.scrollTtyKeypress: True
+URxvt.scrollWithBuffer: True
+
+
+! Behaviour URxvt.visualBell:        false
+!---- ctrl+F12 --> clean screen and scroll-bar
+URxvt.keysym.Control-F12: command:\033c
+!---- setting remote-clipboard
+!URxvt.remote-selection.store: rsh ruth ’cat >/tmp/distributed-selection’
+!URxvt.remote-selection.fetch: rsh ruth ’cat /tmp/distributed-selection’
+!de-iconify (map) on receipt of a bell character, may cause damage screen
+URxvt.mapAlert:           true
+URxvt.print-pipe:         cat > $(echo urxvt.dump.`date +'%Y%M%d%H%m%S'`)
+
+! Font
+URxvt.font:xft:Monofur:size=12:Bold,xft:Heiti SC:size=12:Regular,xft:monofur for Powerline:size=12:Bold
+URxvt.boldFont:xft:Monofur:size=12:Bold,xft:Heiti SC:size=12:Regular,xft:monofur for Powerline:size=12:Bold
+!URxvt.font:xft:Monofur:size=12:Bold,xft:Heiti SC:size=12:Regular
+!URxvt.boldFont:xft:Monofur:size=12:Bold,xft:Heiti SC:size=12:Regular
+!URxvt*font:-gohu-gohufont-medium-r-normal-*-14-100-100-100-c-80-iso8859-1,xft:SimSun:pixelsize=14:Regular
+!URxvt*boldFont:-gohu-gohufont-medium-r-normal-*-14-100-100-100-c-80-iso8859-1,xft:SimSun:pixelsize=14:Regular
+!URxvt*font:-gohu-gohufont-medium-r-normal-*-14-100-100-100-c-80-iso8859-1,-wenquanyi-wenquanyi bitmap song-medium-r-normal-*-15-150-75-75-p-80-iso10646-1
+!URxvt*boldFont:-gohu-gohufont-medium-r-normal-*-14-100-100-100-c-80-iso8859-1,-wenquanyi-wenquanyi bitmap song-medium-r-normal-*-15-150-75-75-p-80-iso10646-1
+! IM
+URxvt.preeditType: Root
+!URxvt.preeditType: OverTheSpot
+!Urxvt.imFont: -adobe-times-bold-i-normal--12-120-75-75-p-68-iso10646-1
+
+
+!UI
+URxvt.internalBorder:5
+URxvt.externalBorder:0
+
+
+! Extensions
+!---- perl extensions: enabled by default has:
+!   selection,option-popup,selection-popup,searchable-scrollback,readline
+! for more: ls /usr/lib/urxvt/perl/
+URxvt.perl-lib:           /usr/lib/urxvt/perl
+!URxvt.perl-ext-common:    default,matcher,tabbed
+URxvt.perl-ext-common:    default,matcher
+!,clipboard
+!URxvt.tabbed.tab-fg:		12
+!URxvt.tabbed.tab-bg:		0
+!URxvt.tabbed.tabbar-fg:		0
+!URxvt.tabbed.tabbar-bg:		7
+URxvt.matcher.launcher:   x-www-browser
+URxvt.matcher.button:     1
+URxvt.matcher.pattern.1:  \\bwww\\.[\\w-]+\\.[\\w./?&@#-=]*[\\w/-]
+URxvt*iconFile:            /usr/share/icons/gnome/32x32/apps/gnome-terminal.png
+
+*.foreground:   base05
+*.background:   base00
+*.cursorColor:  base05
+*.color0:       base00
+
+*.color1:       base08
+*.color2:       base0B
+*.color3:       base0A
+*.color4:       base0D
+*.color5:       base0E
+*.color6:       base0C
+*.color7:       base05
+
+*.color8:       base06
+*.color9:       base08
+*.color10:      base0B
+*.color11:      base0A
+*.color12:      base0D
+*.color13:      base0E
+*.color14:      base0C
+
+*.color15:      base07
+
+! vim: ts=4 sw=4 et ai

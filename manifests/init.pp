@@ -17,7 +17,7 @@ class nby(
     source   => 'puppet:///modules/nby/tmux.conf',
   }
 
-    # setup ssh public key
+  # setup ssh public key
   file {"$home/.ssh":
     ensure   => directory,
     mode     => '0755',

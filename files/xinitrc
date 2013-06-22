@@ -1,0 +1,58 @@
+#!/bin/sh
+
+# log error
+exec >/tmp/session.error
+exec 2>&1
+
+# LANG & TIME
+unset LC_ALL
+export TZ=Asia/Shanghai
+export LC_CTYPE=zh_CN.UTF-8
+export LANG="en_US.UTF-8"
+
+# input method
+export XMODIFIERS=@im=fcitx
+export GTK_IM_MODULE=xim
+export QT_IM_MODULE=xim
+fcitx &
+
+## test for an existing bus daemon, just to be safe
+if test -z "$DBUS_SESSION_BUS_ADDRESS" ; then
+    ## if not found, launch a new one
+    eval `dbus-launch --sh-syntax --exit-with-session`
+    echo "D-Bus per-session daemon address is: $DBUS_SESSION_BUS_ADDRESS"
+fi
+
+# start gnome setting daemon
+env PATH=/usr/lib/gnome-settings-daemon:$PATH gnome-settings-daemon &
+env PATH=/usr/lib/notification-daemon-1.0:$PATH notification-daemon &
+eval "`/usr/bin/gnome-keyring-daemon -r -d`"
+export GNOME_KEYRING_CONTROL SSH_AUTH_SOCK GPG_AGENT_INFO GNOME_KEYRING_PID
+
+# screen saver
+[ -x /usr/bin/gnome-screensaver ] && (/usr/bin/gnome-screensaver &)
+# clipboard management
+[ -x /usr/bin/parcellite ] && /usr/bin/parcellite &
+# bluetooth
+[ -x /usr/bin/bluetotth-applet ] && (/usr/bin/bluetooth-applet &)
+# wuala
+[ -x /usr/bin/wuala ] && (/usr/bin/wuala -enableAutologin -silent &)
+# devmon
+[ -x /usr/bin/devmon ] && (/usr/bin/devmon &>/tmp/devmon.log &)
+# X compsiting
+[ -x /usr/bin/compton ] && compton --config ~/.compton.conf -b
+# mouse
+xsetroot -cursor_name left_ptr
+
+# tint2
+#~/local/t/tint2.sh &
+
+# load local configuration
+[ -x ~/.xinitrc.local ] && sh ~/.xinitrc.local
+
+# xrdb, load twice fix rxvt-unicode background problem
+xrdb -r ~/.Xdefaults
+
+# start xmonad
+/usr/bin/xmonad --recompile
+exec /usr/bin/xmonad
