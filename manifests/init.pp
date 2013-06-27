@@ -17,6 +17,12 @@ class nby(
     source   => 'puppet:///modules/nby/tmux.conf',
   }
 
+  file {"$home/.screenrc":
+    ensure   => present,
+    mode     => '0644',
+    source   => 'puppet:///modules/nby/screenrc',
+  }
+
   # setup ssh public key
   file {"$home/.ssh":
     ensure   => directory,
