@@ -149,17 +149,13 @@ URxvt.externalBorder:0
 !   selection,option-popup,selection-popup,searchable-scrollback,readline
 ! for more: ls /usr/lib/urxvt/perl/
 URxvt.perl-lib:           /usr/lib/urxvt/perl
-!URxvt.perl-ext-common:    default,matcher,tabbed
-URxvt.perl-ext-common:    default,matcher
-!,clipboard
-!URxvt.tabbed.tab-fg:		12
-!URxvt.tabbed.tab-bg:		0
-!URxvt.tabbed.tabbar-fg:		0
-!URxvt.tabbed.tabbar-bg:		7
+URxvt.perl-ext-common:    default,matcher,clipboard
 URxvt.matcher.launcher:   x-www-browser
 URxvt.matcher.button:     1
 URxvt.matcher.pattern.1:  \\bwww\\.[\\w-]+\\.[\\w./?&@#-=]*[\\w/-]
-URxvt*iconFile:            /usr/share/icons/gnome/32x32/apps/gnome-terminal.png
+URxvt*iconFile:           /usr/share/icons/gnome/scalable/apps/utilities-terminal-symbolic.svg
+URxvt*keysym.Mod4-v: perl:clipboard:paste
+URxvt*iso14755: False
 
 *.foreground:   base05
 *.background:   base00

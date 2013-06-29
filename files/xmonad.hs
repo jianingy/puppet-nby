@@ -192,7 +192,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) =
   M.fromList $
     -- launching and killing programs
     [ ((modMask,               xK_Return), spawn $ XMonad.terminal conf) -- %! Launch terminal
-    , ((modMask,               xK_v     ), spawn "/home/jianingy/local/t/mymenu.sh") -- %! Launch dmenu
+    , ((modMask,               xK_i     ), spawn "/home/jianingy/local/t/mymenu.sh") -- %! Launch dmenu
     , ((modMask .|. shiftMask, xK_p     ), spawn "gmrun") -- %! Launch gmrun
     , ((modMask              , xK_s     ), spawn "screenshot") -- %! screenshot
     , ((modMask .|. shiftMask, xK_c     ), kill) -- %! Close the focused window

@@ -34,7 +34,7 @@ export GNOME_KEYRING_CONTROL SSH_AUTH_SOCK GPG_AGENT_INFO GNOME_KEYRING_PID
 # clipboard management
 [ -x /usr/bin/parcellite ] && /usr/bin/parcellite &
 # bluetooth
-[ -x /usr/bin/bluetotth-applet ] && (/usr/bin/bluetooth-applet &)
+[ -x /usr/bin/bluetooth-applet ] && (/usr/bin/bluetooth-applet &)
 # wuala
 [ -x /usr/bin/wuala ] && (/usr/bin/wuala -enableAutologin -silent &)
 # devmon

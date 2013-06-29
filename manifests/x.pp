@@ -3,6 +3,11 @@ class nby::x {
     ensure   => present,
     mode     => '0644',
     source   => 'puppet:///modules/nby/xinitrc',
+  } ->
+  file {"$home/.xsession":
+    ensure   => link,
+    target   => '.xinitrc',
+    mode     => '0644',
   }
 
   file {"$home/.Xdefaults":
@@ -10,6 +15,13 @@ class nby::x {
     mode     => '0644',
     source   => 'puppet:///modules/nby/Xdefaults',
   }
+
+  file {"$home/.compton.conf":
+    ensure   => present,
+    mode     => '0644',
+    source   => 'puppet:///modules/nby/compton.conf',
+  }
+
   # pull emacs configuration from github
   file {"$home/.xmonad":
     ensure   => directory,
