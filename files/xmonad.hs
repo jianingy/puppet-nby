@@ -120,13 +120,14 @@ myTabTheme = defaultTheme { decoHeight = 28
 
 -- myWorkspaces :: [WorkspaceId]
 -- myWorkspaces = ["MAIN"] ++ map show [2 .. 24]
-myWorkspaces = ["Programming", "Browsering", "Temporary", "Operation"] ++ map show [5 .. 9]
+myWorkspaces = ["Programming", "Browsering", "Debugging", "Temporary", "Operation"] ++ map show [6 .. 9]
 
 --
 
 myLayout = avoidStruts
     $ onWorkspace "Programming" layout_toggle_emacs
     $ onWorkspace "Browsering" layout_toggle_browse
+    $ onWorkspace "Debugging" layout_grid
     $ onWorkspace "Temporary" layout_magnify_circle
     $ onWorkspace "Operation" layout_grid
     $ layout_toggle
