@@ -127,7 +127,7 @@ myWorkspaces = ["Programming", "Browsering", "Debugging", "Temporary", "Operatio
 myLayout = avoidStruts
     $ onWorkspace "Programming" layout_toggle_emacs
     $ onWorkspace "Browsering" layout_toggle_browse
-    $ onWorkspace "Debugging" layout_grid
+    $ onWorkspace "Debugging" layout_toggle
     $ onWorkspace "Temporary" layout_magnify_circle
     $ onWorkspace "Operation" layout_grid
     $ layout_toggle
