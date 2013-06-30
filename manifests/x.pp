@@ -16,6 +16,12 @@ class nby::x {
     source   => 'puppet:///modules/nby/Xdefaults',
   }
 
+  file {"$home/.conkyrc":
+    ensure   => present,
+    mode     => '0644',
+    source   => 'puppet:///modules/nby/conkyrc',
+  }
+
   file {"$home/.config/tint2":
     ensure   => directory,
     mode     => '0755',
