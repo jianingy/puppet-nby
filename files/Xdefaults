@@ -89,11 +89,11 @@ URxvt.loginShell:			 true
 URxvt.urgentOnBell:          true
 
 ! Transparent
-URxvt.transparent:     False
+URxvt.transparent:     True
 ! only for 24bits color pesudo transparent
 !URxvt.inheritPixmap:    True
 !URxvt.shading:          5
-URxvt.tintColor:         #000000
+URxvt.tintColor:         #333333
 URxvt.fading:            5
 URxvt.fadeColor:         [0]black
 URxvt.cursorUnderline:   false

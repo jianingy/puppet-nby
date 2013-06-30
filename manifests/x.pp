@@ -16,6 +16,17 @@ class nby::x {
     source   => 'puppet:///modules/nby/Xdefaults',
   }
 
+  file {"$home/.config/tint2":
+    ensure   => directory,
+    mode     => '0755',
+	force    => true,
+  } ->
+  file {"$home/.config/tint2/tint2rc":
+    ensure   => present,
+    mode     => '0644',
+    source   => 'puppet:///modules/nby/tint2rc',
+  }
+
   file {"$home/.compton.conf":
     ensure   => present,
     mode     => '0644',
