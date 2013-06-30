@@ -89,7 +89,7 @@ URxvt.loginShell:			 true
 URxvt.urgentOnBell:          true
 
 ! Transparent
-URxvt.transparent:     True
+URxvt.transparent:     False
 ! only for 24bits color pesudo transparent
 !URxvt.inheritPixmap:    True
 !URxvt.shading:          5
@@ -158,7 +158,7 @@ URxvt*keysym.Mod4-v: perl:clipboard:paste
 URxvt*iso14755: False
 
 *.foreground:   base05
-*.background:   base00
+*.background:   rgba:1500/1500/1500/eeee
 *.cursorColor:  base05
 *.color0:       base00
 
