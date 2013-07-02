@@ -158,7 +158,8 @@ URxvt*keysym.Mod4-v: perl:clipboard:paste
 URxvt*iso14755: False
 
 *.foreground:   base05
-*.background:   rgba:1500/1500/1500/eeee
+*.background:   base00
+URxvt*background:   rgba:1500/1500/1500/eeee
 *.cursorColor:  base05
 *.color0:       base00
 
